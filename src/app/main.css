@@ -1,0 +1,28 @@
+:root {
+    --max-width: 1120px;
+    --white: #fff;
+    --light-grey: #f4f4f4;
+    --red: #9e2727;
+    --violet: #4f1dc4;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0 auto;
+    width: var(--max-width);
+}
+
+.button {
+    border-radius: 0.75rem;
+    padding: 0.5rem 2rem;
+}
+
+.button--solid {
+    background-color: var(--violet);
+    color: var(--white);
+}

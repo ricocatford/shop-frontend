@@ -1,0 +1,8 @@
+.menu__wrapper {
+    width: var(--max-width);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: 2rem;
+    row-gap: 2rem;
+}
