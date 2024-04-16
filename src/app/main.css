@@ -3,6 +3,7 @@
     --white: #fff;
     --light-grey: #f4f4f4;
     --red: #9e2727;
+    --green: #416919;
     --violet: #4f1dc4;
 }
 
@@ -23,6 +24,6 @@
 }
 
 .button--solid {
-    background-color: var(--violet);
+    background-color: var(--green);
     color: var(--white);
 }
