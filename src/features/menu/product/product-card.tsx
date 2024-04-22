@@ -1,21 +1,32 @@
 import Image from "next/image";
 import pizzaImage from "../../../../public/images/menu/margherita.jpg";
-import styles from "./product-card.module.css";
 import { robotoCondensed } from "@/app/layout";
+import Link from "next/link";
+
+import styles from "./product-card.module.css";
 
 export default function ProductCard({ product }) {
     return (
-        <div className={`${robotoCondensed.className} ${styles.card}`}>
-            <Image src={pizzaImage} alt="Pizza" className={styles.image} />
+        <article className={`${robotoCondensed.className} ${styles.card}`}>
+            <Image
+                src={product.image_url}
+                width={500}
+                height={200}
+                alt="Pizza"
+                className={styles.image}
+            />
             <div className={styles.text__wrapper}>
                 <h3 className={styles.name}>{product.name}</h3>
                 <p>{product.description}</p>
             </div>
             <div className={styles.link}>
-                <a className={`${styles.button} button button--solid`}>
+                <Link
+                    className={`${styles.button} button button--solid`}
+                    href={`/menu/${product.id}`}
+                >
                     Medium from ${product.price}
-                </a>
+                </Link>
             </div>
-        </div>
+        </article>
     );
 }

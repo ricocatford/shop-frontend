@@ -24,6 +24,6 @@
 }
 
 .button--solid {
-    background-color: var(--green);
+    background-color: var(--violet);
     color: var(--white);
 }

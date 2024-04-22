@@ -25,3 +25,7 @@
     text-align: center;
     margin: 1.25rem auto;
 }
+
+.button {
+    text-decoration: none;
+}
