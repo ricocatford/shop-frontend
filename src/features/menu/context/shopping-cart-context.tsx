@@ -1,26 +1,32 @@
 "use client";
 
 import { createContext, useState } from "react";
-import Product from "../product/product";
+import CartProduct from "../product/product";
 
-const ShoppingCartContext = createContext();
+interface ShoppingCartContextData {
+    cartItems: CartProduct[];
+}
 
-const defaultValue: Product[] = [];
+const ShoppingCartContext = createContext<ShoppingCartContextData>({
+    cartItems: [],
+});
+
+const defaultValue: CartProduct[] = [];
 
 export default function ShoppingCartProvider({
     children,
 }: {
     children: React.ReactNode;
 }) {
-    const [cartItems, setCartItems] = useState<Product[]>(defaultValue);
+    const [cartItems, setCartItems] = useState<CartProduct[]>(defaultValue);
 
-    const addToCart = (item: Product) => {
-        const isItemInCart: Product | undefined = cartItems.find(
-            (cartItem: Product) => cartItem.id === item.id
+    const addToCart = (item: CartProduct) => {
+        const isItemInCart: CartProduct | undefined = cartItems.find(
+            (cartItem: CartProduct) => cartItem.id === item.id
         );
         if (isItemInCart) {
             setCartItems(
-                cartItems.map((cartItem: Product) =>
+                cartItems.map((cartItem: CartProduct) =>
                     cartItem.id === item.id
                         ? { ...cartItem, quantity: cartItem.quantity + 1 }
                         : cartItem
@@ -31,8 +37,8 @@ export default function ShoppingCartProvider({
         }
     };
 
-    const removeFromCart = (item: Product) => {
-        const isItemInCart: Product | undefined = cartItems.find(
+    const removeFromCart = (item: CartProduct) => {
+        const isItemInCart: CartProduct | undefined = cartItems.find(
             (cartItem) => cartItem.id === item.id
         );
 
@@ -51,7 +57,7 @@ export default function ShoppingCartProvider({
         }
     };
 
-    const data = { cartItems };
+    const data: ShoppingCartContextData = { cartItems };
     return (
         <ShoppingCartContext.Provider value={data}>
             {children}

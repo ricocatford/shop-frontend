@@ -1,5 +1,5 @@
-async function fetchProduct(id) {
-    const response = await fetch(`http://localhost:8000/shop/${id}`);
+async function fetchProduct(id: string) {
+    const response = await fetch(`${process.env.SHOP_BACKEND_HOST}/shop/${id}`);
 
     if (!response.ok) {
         throw new Error("Error while fetching data.");

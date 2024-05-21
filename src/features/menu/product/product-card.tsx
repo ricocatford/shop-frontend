@@ -1,11 +1,11 @@
 import Image from "next/image";
-import pizzaImage from "../../../../public/images/menu/margherita.jpg";
-import { robotoCondensed } from "@/app/layout";
+import { robotoCondensed } from "@/app/fonts";
 import Link from "next/link";
 
 import styles from "./product-card.module.css";
+import { Product } from "./product";
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product }: { product: Product }) {
     return (
         <article className={`${robotoCondensed.className} ${styles.card}`}>
             <Image

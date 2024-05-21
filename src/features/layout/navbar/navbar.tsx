@@ -1,4 +1,4 @@
-import { robotoCondensed } from "../../../app/layout";
+import { robotoCondensed } from "@/app/fonts";
 import {
     faPizzaSlice,
     faFire,

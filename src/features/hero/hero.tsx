@@ -1,5 +1,5 @@
 import styles from "./home.module.css";
-import { robotoCondensed } from "../../app/layout";
+import { robotoCondensed } from "@/app/fonts";
 
 export default function Hero() {
     return (
